@@ -1,0 +1,91 @@
+PATH
+  remote: ../ask-anychat
+  specs:
+    ask-anychat (0.1.0)
+      ask-auth (>= 0.3.2)
+      faraday (~> 2.0)
+      faraday-retry (~> 2.0)
+
+PATH
+  remote: ../ask-mcp
+  specs:
+    ask-mcp (0.5.0)
+      base64
+      httpx (~> 1.4)
+      json-schema (~> 5.0)
+
+PATH
+  remote: .
+  specs:
+    ask-anychat-mcp (0.1.0)
+      ask-anychat (>= 0.1.0)
+      ask-mcp (>= 0.5.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.9.0)
+      public_suffix (>= 2.0.2, < 8.0)
+    ask-auth (0.3.4)
+      base64 (~> 0.2)
+    base64 (0.3.0)
+    bigdecimal (3.3.1)
+    faraday (2.14.4)
+      faraday-net_http (>= 2.0, < 3.5)
+      json
+      logger
+    faraday-net_http (3.4.4)
+      net-http (~> 0.5)
+    faraday-retry (2.4.0)
+      faraday (~> 2.0)
+    http-2 (1.2.3)
+    httpx (1.8.4)
+      http-2 (>= 1.2.0)
+    json (3.0.2)
+    json-schema (5.2.2)
+      addressable (~> 2.8)
+      bigdecimal (~> 3.1)
+    logger (1.7.0)
+    minitest (5.27.0)
+    net-http (0.9.1)
+      uri (>= 0.11.1)
+    public_suffix (7.0.5)
+    rake (13.4.2)
+    uri (1.1.1)
+
+PLATFORMS
+  arm64-darwin-23
+  ruby
+
+DEPENDENCIES
+  ask-anychat!
+  ask-anychat-mcp!
+  ask-mcp!
+  minitest (~> 5.25)
+  rake (~> 13.0)
+
+CHECKSUMS
+  addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
+  ask-anychat (0.1.0)
+  ask-anychat-mcp (0.1.0)
+  ask-auth (0.3.4) sha256=c2cb3d70b97499280280a42269ed40d4e4aa652c7bba4417bf6960df57a340ca
+  ask-mcp (0.5.0)
+  base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
+  bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
+  bundler (4.0.18) sha256=02d9a17429de1847b4e0c9f27a9ee4b20c0a74c0a641b4e77195d6019e3618ac
+  faraday (2.14.4) sha256=9bb4408c44621b0dbaaaa39e5dbfc4dbe58cc6751b6eb94d16ae9e1f2f2fab6e
+  faraday-net_http (3.4.4) sha256=0e78af151747ed1b00f33e25973b4bc220d7f16c00c39676817c8b12331eb588
+  faraday-retry (2.4.0) sha256=7b79c48fb7e56526faf247b12d94a680071ff40c9fda7cf1ec1549439ad11ebe
+  http-2 (1.2.3) sha256=f4e3a7000e9a8ab97595f09eac44c6ec10a2aa438360758124df0ca5bcb280d4
+  httpx (1.8.4) sha256=1782ecde81eb4e961ad8735ec74a6fec8e60efeaa4592c6b2f55d72e19aaeca8
+  json (3.0.2) sha256=8e6d7e7b11384c21230430cef90b71f14849a34a1f4452796670f7c981bd19df
+  json-schema (5.2.2) sha256=60beae0ed79ca9c552854c9ebfd44f50f77bd0c3144526d46afec384509940d5
+  logger (1.7.0) sha256=196edec7cc44b66cfb40f9755ce11b392f21f7967696af15d274dde7edff0203
+  minitest (5.27.0) sha256=2d3b17f8a36fe7801c1adcffdbc38233b938eb0b4966e97a6739055a45fa77d5
+  net-http (0.9.1) sha256=25ba0b67c63e89df626ed8fac771d0ad24ad151a858af2cc8e6a716ca4336996
+  public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
+  rake (13.4.2) sha256=cb825b2bd5f1f8e91ca37bddb4b9aaf345551b4731da62949be002fa89283701
+  uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
+
+BUNDLED WITH
+  4.0.18
