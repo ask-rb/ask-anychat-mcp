@@ -1,3 +1,17 @@
+## [0.1.2] - 2026-09-17
+
+### Changed
+
+- Require ask-anychat `>= 0.1.0` — the client this server is built on is
+  released now, so the dependency is on the release rather than on a checkout.
+
+## [0.1.1] - 2026-09-17
+
+### Changed
+
+- Require ask-mcp `>= 0.5.0`, the release that serves MCP over the stateless
+  Streamable HTTP transport.
+
 ## [0.1.0] - 2026-09-17
 
 ### Added
