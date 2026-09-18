@@ -47,6 +47,11 @@ class ServerTest < Minitest::Test
       ask_anychat_create_agent
       ask_anychat_update_agent
       ask_anychat_delete_agent
+      ask_anychat_list_sources
+      ask_anychat_get_source
+      ask_anychat_browse_pages
+      ask_anychat_read_page
+      ask_anychat_search_pages
     ].sort, @client.tools.keys.sort
   end
 

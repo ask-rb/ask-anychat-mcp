@@ -6,12 +6,17 @@
 class FakeClient
   attr_reader :created, :updated, :destroyed
 
-  def initialize(agents: [])
+  def initialize(agents: [], sources: {}, pages: {}, search_results: {})
     @agents = agents
+    @sources = sources
+    @pages = pages
+    @search_results = search_results
     @created = []
     @updated = []
     @destroyed = []
   end
+
+  # -- agents --------------------------------------------------------------
 
   def workspace_agents(workspace)
     @agents.map { |agent| addressed(workspace, agent) }
@@ -24,8 +29,6 @@ class FakeClient
     addressed(workspace, agent)
   end
 
-  # The API always answers with the address an agent answers on, so the stand-in
-  # does too — a tool that read it would otherwise be tested against nothing.
   def addressed(workspace, agent)
     agent.merge("address" => "/#{workspace}/#{agent['handle']}")
   end
@@ -53,5 +56,35 @@ class FakeClient
   def destroy_workspace_agent(workspace, handle)
     @destroyed << [workspace, handle]
     {}
+  end
+
+  # -- sources -------------------------------------------------------------
+
+  def agent_sources(workspace, agent)
+    key = [workspace, agent]
+    @sources.fetch(key) { raise Ask::AnyChat::Error::NotFound, "No agent at /#{workspace}/#{agent}." }
+  end
+
+  def agent_source(workspace, agent, handle)
+    sources = agent_sources(workspace, agent)
+    source = sources.find { |s| s["handle"] == handle }
+    raise Ask::AnyChat::Error::NotFound, "No source #{handle} for this agent." unless source
+
+    source
+  end
+
+  def agent_source_pages(workspace, agent, source_handle)
+    key = [workspace, agent, source_handle]
+    @pages.fetch(key) { raise Ask::AnyChat::Error::NotFound, "No source #{source_handle} for this agent." }
+  end
+
+  def agent_source_page(workspace, agent, source_handle, reference)
+    key = [workspace, agent, source_handle, reference]
+    @pages.fetch(key) { raise Ask::AnyChat::Error::NotFound, "No page at #{reference}." }
+  end
+
+  def agent_source_search(workspace, agent, source_handle, query)
+    key = [workspace, agent, source_handle]
+    @search_results.fetch(key) { raise Ask::AnyChat::Error::NotFound, "No source #{source_handle} for this agent." }
   end
 end

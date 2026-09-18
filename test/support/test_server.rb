@@ -16,6 +16,11 @@ SUPPORT = {
 }.freeze
 
 class StubClient
+  SOURCE = {
+    "handle" => "website", "kind" => "site", "name" => "Example",
+    "address" => "/anywaye/support/website", "excluded_paths" => []
+  }.freeze
+
   def workspace_agents(_workspace)
     [SUPPORT]
   end
@@ -39,6 +44,30 @@ class StubClient
 
   def destroy_workspace_agent(_workspace, _handle)
     {}
+  end
+
+  def agent_sources(_workspace, _agent)
+    [SOURCE]
+  end
+
+  def agent_source(_workspace, _agent, handle)
+    raise Ask::AnyChat::Error::NotFound, "No source #{handle}." unless handle == "website"
+
+    SOURCE
+  end
+
+  def agent_source_pages(_workspace, _agent, _source)
+    [{ "reference" => "/pricing", "title" => "Pricing" }]
+  end
+
+  def agent_source_page(_workspace, _agent, _source, reference)
+    raise Ask::AnyChat::Error::NotFound, "No page at #{reference}." unless reference == "/pricing"
+
+    { "title" => "Pricing", "content" => "# Pricing\n\n$9/mo.", "source" => "website" }
+  end
+
+  def agent_source_search(_workspace, _agent, _source, query)
+    [{ "reference" => "/pricing", "title" => "Pricing", "snippet" => "Plans start at..." }]
   end
 end
 
