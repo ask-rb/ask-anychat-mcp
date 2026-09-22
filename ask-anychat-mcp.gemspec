@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables = ["ask-anychat-mcp"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "ask-anychat", ">= 0.1.0"
+  spec.add_dependency "ask-anychat", ">= 0.2.1"
   spec.add_dependency "ask-mcp", ">= 0.5.0"
 
   spec.add_development_dependency "minitest", "~> 5.25"

@@ -1,7 +1,7 @@
 PATH
   remote: ../ask-anychat
   specs:
-    ask-anychat (0.1.0)
+    ask-anychat (0.2.1)
       ask-auth (>= 0.3.2)
       faraday (~> 2.0)
       faraday-retry (~> 2.0)
@@ -9,7 +9,7 @@ PATH
 PATH
   remote: ../ask-mcp
   specs:
-    ask-mcp (0.5.0)
+    ask-mcp (0.6.0)
       base64
       httpx (~> 1.4)
       json-schema (~> 5.0)
@@ -17,8 +17,8 @@ PATH
 PATH
   remote: .
   specs:
-    ask-anychat-mcp (0.1.3)
-      ask-anychat (>= 0.1.0)
+    ask-anychat-mcp (0.2.0)
+      ask-anychat (>= 0.2.1)
       ask-mcp (>= 0.5.0)
 
 GEM
@@ -66,10 +66,10 @@ DEPENDENCIES
 
 CHECKSUMS
   addressable (2.9.0) sha256=7fdf6ac3660f7f4e867a0838be3f6cf722ace541dd97767fa42bc6cfa980c7af
-  ask-anychat (0.1.0)
-  ask-anychat-mcp (0.1.3)
+  ask-anychat (0.2.1)
+  ask-anychat-mcp (0.2.0)
   ask-auth (0.3.4) sha256=c2cb3d70b97499280280a42269ed40d4e4aa652c7bba4417bf6960df57a340ca
-  ask-mcp (0.5.0)
+  ask-mcp (0.6.0)
   base64 (0.3.0) sha256=27337aeabad6ffae05c265c450490628ef3ebd4b67be58257393227588f5a97b
   bigdecimal (3.3.1) sha256=eaa01e228be54c4f9f53bf3cc34fe3d5e845c31963e7fcc5bedb05a4e7d52218
   bundler (4.0.18) sha256=02d9a17429de1847b4e0c9f27a9ee4b20c0a74c0a641b4e77195d6019e3618ac
